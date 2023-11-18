@@ -28,7 +28,15 @@
                     <li>
                         <a class="nav-link" href="{{ route('user.index') }}">All Users</a>
                     </li>
+                </ul>
+            </li>
 
+            <li class="nav-item dropdown {{ $type_menu === 'question' ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Questions</span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('question.index') }}">All Question</a>
+                    </li>
                 </ul>
             </li>
 
