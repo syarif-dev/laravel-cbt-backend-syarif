@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\ExamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ExamController;
+use App\Http\Controllers\Api\MateriController;
+use App\Http\Controllers\Api\ContentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,4 +41,10 @@ Route::middleware(['auth:sanctum'])->group(function() {
 
     // post answer
     Route::post('/answer', [ExamController::class, 'answerQuestion']);
+
+    // api content
+    Route::apiResource('contents', ContentController::class);
+
+    // api materi
+    Route::apiResource('materis', MateriController::class);
 });
